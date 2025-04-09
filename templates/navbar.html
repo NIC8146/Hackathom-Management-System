@@ -1,0 +1,51 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<script src="{% static 'base/js/navbar.js' %}"></script>
+
+<div id="nav">
+    <img id="nav-left" src="{% static 'base/images/user.png' %}" alt="">
+    <div id="nav-right">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'teams' %}">Team</a></li>
+            <li><a href="{% url 'find_members' %}">Find members</a></li>
+            <li><a href="{% url 'invitations' %}?q=recived">Invitations</a></li>
+
+            {% if request.user.is_authenticated %}
+            <img src="{% static 'base/images/user.png' %}" alt="{{request.user}}" onclick="togglemenu()">
+            {% else %}
+            <img src="{% static 'base/images/profile.png' %}" alt="Login" onclick="togglemenu()">
+            {% endif %}
+        </ul>
+        <div id="sub-menu-wrap">
+            {% if request.user.is_authenticated %}
+            <div id="sub-menu">
+                <div id="user-info">
+                    <img src="{% static 'base/images/user.png' %}" alt="">
+                    <h3>{{request.user.name}}</h3>
+                </div>
+                <hr>
+                <a href="{% url 'profilepage' request.user %}" class="sub-menu-link">
+                    <img src="{% static 'base/images/profile.png' %}" alt="">
+                    <p>Profile</p>
+                </a>
+                <a href="{% url 'logoutuser' %}" class="sub-menu-link">
+                    <img src="{% static 'base/images/logout.png' %}" alt="">
+                    <p>Logout</p> 
+                </a>
+            </div>
+            {% else %}
+            <div id="sub-menu">
+                <a href="{% url 'loginpage' %}" class="sub-menu-link">
+                    <img src="{% static 'base/images/login.png' %}" alt="">
+                    <p>Login</p>
+                </a>
+                <a href="" class="sub-menu-link">
+                    <img src="{% static 'base/images/logout.png' %}" alt="">
+                    <p>Register</p> 
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

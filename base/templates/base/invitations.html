@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/invitations.css' %}">
+
+<div id="content-space">
+    <div class="glass" id="left">
+        <p>
+            <a href="{% url 'invitations' %}?q=recived">
+                invitation recived
+            </a>
+        </p>
+        <p>
+            <a href="{% url 'invitations' %}?q=sent">
+                invitation sent
+            </a>
+        </p>
+    </div>
+    <div class="glass" id="right">
+        {% for invitation in invitations %}
+        <div class="invitation-card">
+            <div class="message">
+                <p>{{ invitation.message }}</p>
+            </div>
+            {% if request.GET.q == "sent" %}
+            <p>Sent to: {{ invitation.sent_to }}</p>
+            {% else %}
+            <p>Sent by: {{ invitation.sent_by }}</p>
+            {% endif %}
+            <p>time : {{ invitation.timedate }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

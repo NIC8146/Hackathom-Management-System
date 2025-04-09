@@ -1,0 +1,78 @@
+.content-block
+{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#profile-card
+{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#details-header
+{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+hr
+{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: rgb(255 144 144);
+    margin: 15px 0 10px;
+}
+
+#user-details
+{
+    margin-bottom: 20px;
+}
+
+#skills-card {
+    width: 18vw;
+    max-width: 55vw;
+    background: rgb(255 174 174 / 20%);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s ease-in-out;
+}
+
+#skill-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#skill {
+    /* background: #4A90E2; */
+    /* color: white; */
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+
+    background: rgb(255 136 136 / 52%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    /* border-radius: 10px; */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+

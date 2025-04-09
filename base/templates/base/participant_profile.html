@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/participant-team_profile.css' %}">
+<div class="content-block">
+
+    <div id="profile-card">
+        <img src="" alt="profilepic">
+        <div id="details">
+            <p>{{participant.name}}</p>
+            <p>{{participant.username}}</p>
+            <p>{{participant.branch}}</p>
+            <p>{{participant.skills}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

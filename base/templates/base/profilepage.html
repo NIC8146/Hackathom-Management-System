@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/profilepage.css' %}">
+
+<div class="content-block">
+
+    <div class="content-block" id="profile-card">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div id="details-header">
+            <img src="{% static 'base/images/user.png' %}" alt="">
+            <div id="name">
+                <p>{{request.user}}</p>
+                <p>username : {{request.user.username}}</p>
+            </div>
+        </div>
+        <hr>
+        <div id="details">
+            <div id="user-details">
+                <p>Date of Birth : {{request.user.dob}}</p>
+                <p>phone : {{request.user.phone}}</p>
+                <p>Email.: {{request.user.email}}</p>
+                <p>Branch : {{request.user.branch}}</p>
+            </div>
+            {% if request.user.in_team%}
+            <div id="team-details">
+                <p>Team Name : {{request.user.teamname}}</p>
+                <p>Team Leader : {{request.user.teamname.teamleader}}</p>
+            </div>
+            {% endif %}
+            <div id="skills-card">
+                <p>Skills</p>
+                <div id="skill-section">
+                    {% for skill in skills %}
+                    <span id="skill">{{skill}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

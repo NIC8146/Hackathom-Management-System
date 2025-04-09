@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/home.css' %}">
+
+<div class="content-block">
+    <div id="about">
+        <div id="heading">What is Byte Brigade??</div>
+        <p>
+            Byte Brigade is more than just a competition; it's a learning experience.
+            You'll have the opportunity to network with fellow developers,
+            learn new skills through workshops and mentorship, and push your creative limits.
+            Our goal is to create a supportive environment where innovation thrives.
+            Come prepared to brainstorm, build, and have fun!
+            Let's see what incredible projects we can create together.
+        </p>
+    </div>
+    <div id="organizers">
+        <div class="card"> <img src="{% static 'base/images/org1.jpg' %}" alt=""></div>
+        <div class="card">dfg</div>
+        <div class="card">dfg</div>
+    </div>
+</div>
+
+{% endblock %}

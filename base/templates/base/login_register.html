@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/login_register.css' %}">
+
+<div class="content-block">
+    <div id="login_register_card">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label>username</label>
+            <input type="text" name="Username" placeholder="Username">
+
+            <label>Password</label>
+            <input type="text" name="Password" placeholder="Password">
+
+            <input type="submit" value="login">
+        </form>
+        
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

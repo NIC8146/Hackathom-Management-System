@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/teams.css' %}">
+<script src="{% static 'base/js/card.js' %}"></script>
+
+<div class="content-block">
+    <a id="lookingforteam" href="{% url 'register_participant' %} ">register</a>
+    
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div id="display-area">
+        {% for participant in participants %}
+            {%  if not participant.teamname %}
+                <div class="card" data-url="{% url 'participant_profile' participant.id %}">
+                        <img src="" alt="teamlogo">
+                        <p>{{participant.name}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% for participant in participants %}
+            {%  if participant.teamname %}
+                <div class="card occupied" data-url="{% url 'participant_profile' participant.id %}">
+                    <img src="" alt="teamlogo">
+                    <p>{{participant.name}}</p>
+                    <p>{{participant.teamname}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
