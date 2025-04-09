@@ -12,9 +12,16 @@
         <img src="" alt="profilepic">
         <div id="details">
             <p>{{participant.name}}</p>
-            <p>{{participant.username}}</p>
-            <p>{{participant.branch}}</p>
-            <p>{{participant.skills}}</p>
+            <p>username : {{participant.username}}</p>
+            <p>branch : {{participant.branch}}</p>
+            <div id="skills-card">
+                <p>Skills</p>
+                <div id="skill-section">
+                    {% for skill in skills %}
+                    <span id="skill">{{skill}}</span>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>

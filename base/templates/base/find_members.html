@@ -19,17 +19,17 @@
 
     <div id="display-area">
         {% for participant in participants %}
-            {%  if not participant.teamname %}
+            {%  if not participant.in_team %}
                 <div class="card" data-url="{% url 'participant_profile' participant.id %}">
-                        <img src="" alt="teamlogo">
+                        <img src="" alt="profilepic">
                         <p>{{participant.name}}</p>
                 </div>
             {% endif %}
         {% endfor %}
         {% for participant in participants %}
-            {%  if participant.teamname %}
+            {%  if participant.in_team %}
                 <div class="card occupied" data-url="{% url 'participant_profile' participant.id %}">
-                    <img src="" alt="teamlogo">
+                    <img src="" alt="profilepic">
                     <p>{{participant.name}}</p>
                     <p>{{participant.teamname}}</p>
                 </div>

@@ -57,7 +57,8 @@ def find_members(request):
 
 def participant_profile(request, pk):
     p = participant.objects.get(id=pk)
-    context = {"participant" : p}
+    skills = [x.strip() for x in p.skills.split(",")]
+    context = {"participant" : p, "skills" : skills}
     return render(request, 'base/participant_profile.html', context)
 
 @login_required(login_url="/loginpage")
