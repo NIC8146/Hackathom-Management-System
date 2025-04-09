@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/invitationPage.css' %}">
+
+<div class="content-block">
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="send team invitation">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

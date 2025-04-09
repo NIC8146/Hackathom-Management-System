@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # from django.http.request import QueryDict
 
 from .models import team, participant, invitation
-from .forms  import teamform
+from .forms  import teamform, invitationForm
 
 # Create your views here
 def home(request):
@@ -109,7 +109,7 @@ def register_team(request):
                     participant_instance = participant.objects.get(name=request.user)
                     participant_instance.in_team = True
                     participant_instance.isleader = True
-                    participant.teamname = team.objects.get(name=request.POST.get("name"))
+                    participant_instance.teamname = team.objects.get(name=request.POST.get("name"))
                     participant_instance.save()
 
                     return redirect("teams")
@@ -124,6 +124,22 @@ def register_team(request):
         else:
             messages.error(request, "you are not registered participant")
             return redirect("teams")
+
+@login_required(login_url="/loginpage")
+def invite_participant(request, pk):
+    if request.method == "POST":
+        form = invitationForm(request.POST) # get data of form fields from http request
+        if form.is_valid():
+            invitation_instance = form.save(commit=False) 
+            invitation_instance.sent_to = participant.objects.get(id=pk)
+            invitation_instance.sent_by = request.user
+            invitation_instance.save()
+            print("saved")
+        return redirect("teams")
+    else:
+        form = invitationForm()
+        context = {"form" : form}
+        return render(request, 'base/invitationPage.html', context)
 
 @login_required(login_url="/loginpage")
 def profilepage(request, pk):

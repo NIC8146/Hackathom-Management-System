@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 
-
-
-
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'base/css/participant-team_profile.css' %}">
@@ -22,6 +19,9 @@
                     {% endfor %}
                 </div>
             </div>
+            {% if not participant.in_team and request.user.in_team %}
+            <p id="invite_btn"><a href="{% url 'invite_participant' participant.id %}">invite</a></p>
+            {% endif %}
         </div>
     </div>
 </div>
