@@ -38,7 +38,7 @@ def logoutuser(request):
 
 @login_required(login_url="/loginpage")
 def invitations(request):
-    type = request.GET.get("q")
+    type = request.GET.get("q",None)
 
     if type == "sent":
         i = invitation.objects.filter(sent_by=request.user)
@@ -47,6 +47,45 @@ def invitations(request):
     context = {"invitations" : i}
 
     return render(request,"base/invitations.html", context)
+
+@login_required(login_url="/loginpage")
+def invite_participant(request, pk):
+
+    participant_instance = participant.objects.get(id=pk)
+    if request.user.isleader:
+        if not participant_instance.in_team:
+            if request.method == "POST":
+                form = invitationForm(request.POST) # get data of form fields from http request
+                if form.is_valid():
+                    invitation_instance = form.save(commit=False) 
+                    invitation_instance.sent_to = participant_instance
+                    invitation_instance.sent_by = request.user
+                    invitation_instance.save()
+                return redirect("teams")
+            else:
+                form = invitationForm()
+                context = {"form" : form}
+        else:
+            messages.error(request, "Participant is already in team")
+    else:
+        messages.error(request, "You are not a team leader")
+    return render(request, 'base/invitationPage.html', context)
+
+@login_required(login_url="/loginpage")
+def accept_invitation(request, pk):
+    p = participant.objects.get(name=request.user)
+    invitation_instance = invitation.objects.get(id=pk)
+    p.in_team = True
+    p.teamname = invitation_instance.sent_by.teamname
+    p.save()
+    invitation_instance.delete()
+    return redirect(invitations)
+
+@login_required(login_url="/loginpage")
+def delete_invitaion(request, pk):
+    obj = invitation.objects.get(id=pk)
+    obj.delete()
+    return redirect(invitations)
 
 ###########################################################################################
 def find_members(request):
@@ -124,22 +163,6 @@ def register_team(request):
         else:
             messages.error(request, "you are not registered participant")
             return redirect("teams")
-
-@login_required(login_url="/loginpage")
-def invite_participant(request, pk):
-    if request.method == "POST":
-        form = invitationForm(request.POST) # get data of form fields from http request
-        if form.is_valid():
-            invitation_instance = form.save(commit=False) 
-            invitation_instance.sent_to = participant.objects.get(id=pk)
-            invitation_instance.sent_by = request.user
-            invitation_instance.save()
-            print("saved")
-        return redirect("teams")
-    else:
-        form = invitationForm()
-        context = {"form" : form}
-        return render(request, 'base/invitationPage.html', context)
 
 @login_required(login_url="/loginpage")
 def profilepage(request, pk):

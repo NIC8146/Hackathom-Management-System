@@ -21,15 +21,27 @@
     <div class="glass" id="right">
         {% for invitation in invitations %}
         <div class="invitation-card">
-            <div class="message">
-                <p>{{ invitation.message }}</p>
+            <div class="invitation_details">
+                <div class="message">
+                    <p>{{ invitation.message }}</p>
+                </div>
+                {% if request.GET.q == "sent" %}
+                <p>Sent to: {{ invitation.sent_to }}</p>
+                {% else %}
+                <p>Sent by: {{ invitation.sent_by }}</p>
+                {% endif %}
+                <p>time : {{ invitation.timedate }}</p>
             </div>
-            {% if request.GET.q == "sent" %}
-            <p>Sent to: {{ invitation.sent_to }}</p>
-            {% else %}
-            <p>Sent by: {{ invitation.sent_by }}</p>
-            {% endif %}
-            <p>time : {{ invitation.timedate }}</p>
+            <div class="action_buttons">
+                {% if request.GET.q != "sent" %}
+                <a href="{% url 'accept_invitation' invitation.id %}">
+                    <img src="{% static 'base/images/check1.png'  %}" alt="">
+                </a>
+                {% endif %}
+                <a href="{% url 'delete_invitation' invitation.id %}">
+                    <img src="{% static 'base/images/delete.png' %}" alt="">
+                </a>
+            </div>
         </div>
         {% endfor %}
     </div>

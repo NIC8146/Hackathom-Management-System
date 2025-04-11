@@ -1,11 +1,10 @@
-body
-{
+body {
     height: 100vh;
     padding-bottom: 20px;
 
 }
 
-#content-space{
+#content-space {
     display: grid;
     grid-template-columns: 1fr 3fr;
     width: 98vw;
@@ -13,19 +12,17 @@ body
     gap: 1vw;
 }
 
-.glass
-{
-   /* glassmorphism */
-   background: rgba(243, 84, 84, 0.171);
-   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-   backdrop-filter: blur(4px);
-   -webkit-backdrop-filter: blur(4px);
-   border-radius: 10px;
-   border: 1px solid rgba(255, 255, 255, 0.18);
+.glass {
+    /* glassmorphism */
+    background: rgba(243, 84, 84, 0.171);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-#left
-{
+#left {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,8 +32,7 @@ body
     top: 070px;
 }
 
-#right
-{
+#right {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -45,22 +41,30 @@ body
     padding-top: 20px;
 }
 
-.invitation-card
-{
+.invitation-card {
     width: 98%;
     height: 90px;
 
     background: rgb(255 174 174 / 20%);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 20px );
-    -webkit-backdrop-filter: blur( 20px );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
     padding: 17px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.message{
+.message {
     overflow: hidden;
     height: 20px;
+}
+
+.action_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
