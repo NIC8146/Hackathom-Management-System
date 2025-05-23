@@ -11,8 +11,9 @@ urlpatterns = [
 
     path("accept_invitation/<str:pk>",views.accept_invitation, name="accept_invitation"), # delete invitation card
     path("delete_invitation/<str:pk>",views.delete_invitaion, name="delete_invitation"), # delete invitation card
-    path("loginpage", views.login_register, name="loginpage"), # login page
+    path("loginpage", views.loginpage, name="loginpage"), # login page
     path("logoutuser", views.logoutuser, name="logoutuser"), # logout the user
+    path("registerpage",views.registerpage,name="registerpage"), # register the new user
     path("register_participant", views.register_participant, name="register_participant"), # register the participant
     path("register_team", views.register_team, name="register_team"), #register team page
     path("participant_profile/<str:pk>/", views.participant_profile, name="participant_profile"), # participant profile page

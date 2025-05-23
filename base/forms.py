@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import team, invitation
+from .models import team, invitation, participant
 
 class teamform(ModelForm):
     class Meta:
@@ -12,3 +12,8 @@ class invitationForm(ModelForm):
     class Meta:
         model = invitation
         fields = ["message"]
+
+class register_participant_form(ModelForm):
+    class Meta:
+        model = participant
+        fields = ["name", "username", "phone", "skills", "email", "password"]

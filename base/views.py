@@ -2,24 +2,25 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 # from django.http.request import QueryDict
 
 from .models import team, participant, invitation
-from .forms  import teamform, invitationForm
+from .forms  import teamform, invitationForm, register_participant_form
 
 # Create your views here
 def home(request):
     return render(request, 'base/home.html')
 
 
-def login_register(request):
+def loginpage(request):
+    page = "login"
     if request.method == "POST":
         email = request.POST.get("Username")
         password = request.POST.get("Password")
 
         try:
-            user = participant.objects.get(email=email)
             user = authenticate(request, email=email, password=password)
             if user is not None:
                 login(request,user)
@@ -29,12 +30,30 @@ def login_register(request):
         except Exception as e:
             print(str(e))
             messages.error(request, "wrong username or password")
-
-    return render(request, 'base/login_register.html')
+    context = {"page": page}
+    return render(request, 'base/login_register.html',context)
 
 def logoutuser(request):
     logout(request)
     return redirect("/")
+
+def registerpage(request):
+    if request.method == "POST":
+        form = register_participant_form(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            raw_password = form.cleaned_data.get('password')
+            user.set_password(raw_password)
+            user.save()
+            login(request,user)
+            return redirect("home")
+        else:
+            messages.error(request,"error occured during registration")
+    context = {"form": register_participant_form()}
+    return render(request, 'base/login_register.html', context)
+
+
 
 @login_required(login_url="/loginpage")
 def invitations(request):
