@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/register_participants.css' %}">
+
+<div id="form-block">update profile
+    <h2>Update Profile</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Update</button>
+    </form>
+
+    <a href="{% url 'home' %}">Cancel</a>
+</div>
+
+
+
+
+{% endblock %}

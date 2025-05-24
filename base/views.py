@@ -4,10 +4,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-# from django.http.request import QueryDict
-
 from .models import team, participant, invitation
 from .forms  import teamform, invitationForm, register_participant_form
+from django.contrib.auth import update_session_auth_hash
+from .forms import UpdateParticipantForm, CustomPasswordChangeForm
 
 # Create your views here
 def home(request):
@@ -53,7 +53,22 @@ def registerpage(request):
     context = {"form": register_participant_form()}
     return render(request, 'base/login_register.html', context)
 
+@login_required
+def update_profile(request):
+    user = request.user
+    if request.method == 'POST':
+        form = UpdateParticipantForm(request.POST, instance=user)
 
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            messages.error(request, 'errors')
+    else:
+        form = UpdateParticipantForm(instance=request.user)
+
+    context = {'form': form}
+    return render(request, 'base/update_profile.html', context)
 
 @login_required(login_url="/loginpage")
 def invitations(request):

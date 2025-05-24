@@ -29,6 +29,10 @@
                     <img src="{% static 'base/images/profile.png' %}" alt="">
                     <p>Profile</p>
                 </a>
+                <a href="{% url 'update_profile' %}" class="sub-menu-link">
+                    <img src="{% static 'base/images/setting.png' %}" alt="">
+                    <p>Settings</p>
+                </a>
                 <a href="{% url 'logoutuser' %}" class="sub-menu-link">
                     <img src="{% static 'base/images/logout.png' %}" alt="">
                     <p>Logout</p> 
