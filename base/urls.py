@@ -9,6 +9,7 @@ urlpatterns = [
     path("find_members", views.find_members, name="find_members"), # find member page
     path("invitations", views.invitations, name="invitations"), # user invitations page
     path("invite_participant/<str:pk>",views.invite_participant,name="invite_participant"), # invitation page
+    path("problem_statement", views.problem_statements, name="problem_statement"), # problem statements page
 
     # invitation operation links
     path("accept_invitation/<str:pk>",views.accept_invitation, name="accept_invitation"), # delete invitation card

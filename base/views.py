@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .models import team, participant, invitation
+from .models import team, participant, invitation, problem_statement
 from .forms  import teamform, invitationForm, register_participant_form
 from django.contrib.auth import update_session_auth_hash
 from .forms import UpdateParticipantForm, CustomPasswordChangeForm
@@ -208,4 +208,9 @@ def profilepage(request, pk):
         messages.error(request, "user error")
         context = {}
     return render(request, "base/profilepage.html", context)
-      
+
+def problem_statements(request):
+    statments = problem_statement.objects.all()
+    print(statments)
+    context = {"statments": statments}
+    return render(request, "base/problem_statements.html", context)
