@@ -41,10 +41,25 @@
     list-style-type: none;
 }
 
+#nav-right ul li:hover
+{
+
+    font-weight: 600;
+}
+
 #nav-right ul img
 {
  width: 40px;
 }
+
+#nav-right ul img:hover
+{
+
+ width: 45px;
+ transition-duration: 0.3s;
+}
+
+
 
 #nav-right ul li a
 {

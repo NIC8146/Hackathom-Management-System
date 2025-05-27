@@ -58,7 +58,6 @@ body {
 }
 
 .message {
-    overflow: hidden;
     height: 20px;
 }
 
@@ -67,4 +66,123 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+
+    /* ...existing code... */
+
+#left p {
+    margin: 10px 0;
+}
+
+#left a {
+    text-decoration: none;
+    color: #d94f4f;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+#left a.active,
+#left a:focus,
+#left a:hover {
+    background: rgba(243, 84, 84, 0.15);
+    color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+}
+
+.invitation-card {
+    /* ...existing code... */
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.invitation-card:hover {
+    box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18);
+    transform: translateY(-2px) scale(1.01);
+    border: 1.5px solid #f36464;
+}
+
+.invitation_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.message p {
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #2d2d2d;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 0.01em;
+}
+
+.invitation_details p {
+    margin: 0;
+    font-size: 0.98rem;
+    color: #555;
+}
+
+.invitation_details p:first-child {
+    font-weight: 600;
+    color: #d94f4f;
+}
+
+.action_buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(243, 84, 84, 0.10);
+}
+
+.action_buttons a:hover {
+    background: #fff0f0;
+    box-shadow: 0 4px 16px 0 rgba(243, 84, 84, 0.15);
+    border: 1.5px solid #f36464;
+}
+
+.action_buttons img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform 0.15s;
+}
+
+.action_buttons a:hover img {
+    transform: scale(1.12);
+}
+
+/* Responsive improvements */
+@media (max-width: 900px) {
+    #content-space {
+        grid-template-columns: 1fr;
+        width: 100vw;
+        gap: 0;
+    }
+    #left {
+        flex-direction: row;
+        height: auto;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 10px 0;
+        position: static;
+    }
+    #right {
+        padding-top: 10px;
+    }
+    .invitation-card {
+        width: 98vw;
+    }
 }

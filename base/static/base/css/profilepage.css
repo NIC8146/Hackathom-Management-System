@@ -1,78 +1,146 @@
-.content-block
-{
+.content-block {
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    background: rgba(243, 84, 84, 0.10);
 }
 
-#profile-card
-{
-    height: 90%;
+#profile-card {
+    height: auto;
+    min-height: 70%;
     width: 90%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    border-radius: 18px;
+    padding: 32px 36px;
+    transition: box-shadow 0.2s;
 }
 
-#details-header
-{
+#profile-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+}
+
+#details-header {
     display: flex;
     align-items: center;
     gap: 25px;
+    margin-bottom: 10px;
 }
 
-hr
-{
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff9090;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(31,38,135,0.10);
+}
+
+#name h2 {
+    margin: 0;
+    font-size: 1.7rem;
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.username {
+    color: #888;
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+hr {
     border: 0;
-    height: 1px;
+    height: 1.5px;
     width: 100%;
-    background: rgb(255 144 144);
-    margin: 15px 0 10px;
+    background: linear-gradient(90deg, #ff9090 0%, #fff 100%);
+    margin: 18px 0 15px;
 }
 
-#user-details
-{
-    margin-bottom: 20px;
+#user-details, #team-details {
+    margin-bottom: 22px;
+    background: rgba(255, 174, 174, 0.10);
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px 0 rgba(31,38,135,0.07);
+}
+
+#user-details h3, #team-details h3, #skills-card h3 {
+    margin-bottom: 10px;
+    color: #e74c3c;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#user-details p, #team-details p {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: #333;
 }
 
 #skills-card {
-    width: 18vw;
-    max-width: 55vw;
+    width: 100%;
     background: rgb(255 174 174 / 20%);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 20px );
-    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+    backdrop-filter: blur(20px);
+    padding: 18px 12px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 10px;
     transition: width 0.3s ease-in-out;
 }
 
 #skill-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    padding: 10px 0;
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 10px 0 0 0;
 }
 
-#skill {
-    /* background: #4A90E2; */
-    /* color: white; */
-    padding: 6px 12px;
+.skill-badge {
+    padding: 7px 16px;
     border-radius: 20px;
-    font-size: 14px;
-    white-space: nowrap;
-
-    background: rgb(255 136 136 / 52%);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 20px );
-    -webkit-backdrop-filter: blur( 20px );
-    /* border-radius: 10px; */
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-
+    font-size: 15px;
+    background: linear-gradient(90deg, #ffb6b6 0%, #ffeaea 100%);
+    color: #e74c3c;
+    font-weight: 500;
+    border: 1px solid #ffb6b6;
+    box-shadow: 0 2px 8px 0 rgba(31,38,135,0.07);
+    transition: background 0.2s, color 0.2s;
 }
 
+.skill-badge:hover {
+    background: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.no-skills {
+    color: #aaa;
+    font-style: italic;
+    font-size: 1rem;
+    padding: 6px 0;
+}
+
+@media (max-width: 700px) {
+    #profile-card {
+        padding: 18px 6vw;
+        width: 98%;
+        min-width: unset;
+    }
+    .profile-img {
+        width: 60px;
+        height: 60px;
+    }
+}

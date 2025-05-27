@@ -1,0 +1,83 @@
+#login_register_card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#login_register_card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#login_register_card label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#login_register_card input[type="text"],
+#login_register_card input[type="password"],
+#login_register_card input[type="email"],
+#login_register_card input[type="submit"],
+#login_register_card select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+#login_register_card input[type="submit"] {
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#login_register_card input[type="submit"]:hover {
+    background-color: #135ca8;
+}
+
+#login_register_card a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#login_register_card a:hover {
+    text-decoration: underline;
+}
+
+#login_register_card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+#login_register_card .messages {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffdddd;
+    color: #a70000;
+    border-left: 4px solid red;
+    border-radius: 8px;
+    list-style: none;
+}
+
+#login_register_card p:has(input), 
+#login_register_card p:has(select) {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,34 +1,251 @@
-#organizers {
+*{
+    color: #002449;
+}
+
+.content-block
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about {
+    color: #002449;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about h1{
+    font-size: xxx-large;
+}
+#line
+{
+    color: #496582;
+}
+
+.register-btn
+{
+    width: 235px;
+    height: 55px;
+    border-radius: 20px;
+    color: white;
+    background-color: #c35151;
+    border-color: #ff1f16f5;
+    font-size: larger;
+    font-family: cursive;
+}
+
+
+#organizers
+{
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 0 0px;
+
+    background: rgba(243, 84, 84, 0.171);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#organizers p{
+    font-size: 50px;
+}
+
+
+
+#organizers-cards {
     display: flex;
     flex-direction: row;
-    background-color: aquamarine;
+    padding: 35px;
     justify-content: center;
-    gap: 40px;
+    gap: 130px;
 
 }
 
 .card {
-    width: 220px;
-    height: 255px;
-    background-color: aqua;
+    width: 400px;
+    height: 400px;
 }
 
-.card img{
-    width: 10px;
+.card img {
+    width: 400px;
+    border-radius: 1dvh;
 }
 
-#about {
-    border-bottom: 2px solid #ccd3db;
-    padding: 0 0 20px 0;
-
+.highlight
+{
+    color: #c35151;
 }
 
-#about p {
-    font-family: 'montserratmedium';
+
+#discription {
+    font-family: montserratregular;
+    font-size: 15px;
     font-size: larger;
+        padding: 25px 165px 45px 165px;
 }
 
-#about p::first-letter {
+#discription::first-letter {
     color: red;
     font-size: x-large;
+}
+
+
+.prize {
+    width: 95%;
+    margin: 40px 0 0 0;
+    background: rgba(255, 235, 205, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prize h2 {
+    font-size: 2.5rem;
+    color: #c35151;
+    margin-bottom: 20px;
+}
+
+.prize-pool {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prize-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.10);
+    padding: 25px 40px;
+    text-align: center;
+    min-width: 180px;
+}
+
+.prize-card h3 {
+    color: #c35151;
+    margin-bottom: 10px;
+}
+
+.timeline {
+    width: 95%;
+    margin: 40px 0 0 0;
+    background: rgba(205, 243, 255, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline h2 {
+    font-size: 2.2rem;
+    color: #002449;
+    margin-bottom: 18px;
+}
+
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.timeline-list li {
+    margin: 10px 0;
+}
+
+.timeline-list span {
+    color: #c35151;
+    font-weight: bold;
+}
+
+.faq {
+    width: 95%;
+    margin: 40px 0 0 0;
+    background: rgba(243, 205, 255, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq h2 {
+    font-size: 2.2rem;
+    color: #002449;
+    margin-bottom: 18px;
+}
+
+.faq-list {
+    width: 80%;
+}
+
+.faq-item {
+    margin-bottom: 18px;
+}
+
+.faq-item h4 {
+    color: #c35151;
+    margin-bottom: 5px;
+}
+
+.contact-us {
+    width: 95%;
+    margin: 40px 0 0 0;
+    background: rgba(205, 255, 205, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-us h2 {
+    font-size: 2.2rem;
+    color: #002449;
+    margin-bottom: 18px;
+}
+
+.contact-details {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.contact-details a {
+    color: #c35151;
+    text-decoration: underline;
+}
+
+#sponsors {
+    width: 95%;
+    margin: 40px 0 0 0;
+    background: rgba(255, 205, 205, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body, .about, .prize, .timeline, .faq, .contact-us {
+    font-family: 'Montserrat', 'Poppins', 'Roboto', Arial, sans-serif;
+}
+.about h1, .prize h2, .timeline h2, .faq h2, .contact-us h2 {
+    font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+    font-weight: 700;
 }

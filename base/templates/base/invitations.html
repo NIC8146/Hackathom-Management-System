@@ -8,12 +8,12 @@
 <div id="content-space">
     <div class="glass" id="left">
         <p>
-            <a href="{% url 'invitations' %}?q=recived">
+            <a href="{% url 'invitations' %}?q=recived" class="{% if request.GET.q != 'sent' %}active{% endif %}">
                 invitation recived
             </a>
         </p>
         <p>
-            <a href="{% url 'invitations' %}?q=sent">
+            <a href="{% url 'invitations' %}?q=sent" class="{% if request.GET.q == 'sent' %}active{% endif %}">
                 invitation sent
             </a>
         </p>

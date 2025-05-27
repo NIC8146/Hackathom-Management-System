@@ -3,24 +3,29 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'base/css/participant-team_profile.css' %}">
-<div class="content-block">
 
+<div class="content-block">
     <div id="profile-card">
-        <img src="" alt="profilepic">
+
+        <!-- Add profile picture here -->
+        <img src="{{ participant.photo.url }}" alt="Profile Picture" id="profile-pic">
+
         <div id="details">
-            <p>{{participant.name}}</p>
-            <p>username : {{participant.username}}</p>
-            <p>branch : {{participant.branch}}</p>
+            <h2>{{ participant.name }}</h2>
+            <p><strong>Username:</strong> {{ participant.username }}</p>
+            <p><strong>Branch:</strong> {{ participant.branch }}</p>
+
             <div id="skills-card">
-                <p>Skills</p>
+                <h3>Skills</h3>
                 <div id="skill-section">
                     {% for skill in skills %}
-                    <span id="skill">{{skill}}</span>
+                        <span class="skill-badge">{{ skill }}</span>
                     {% endfor %}
                 </div>
             </div>
+
             {% if not participant.in_team and request.user.in_team %}
-            <p id="invite_btn"><a href="{% url 'invite_participant' participant.id %}">invite</a></p>
+                <a href="{% url 'invite_participant' participant.id %}" id="invite-btn">Invite</a>
             {% endif %}
         </div>
     </div>

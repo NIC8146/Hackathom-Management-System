@@ -7,8 +7,8 @@
 <script src="{% static 'base/js/card.js' %}"></script>
 
 <div class="content-block">
-    <a id="lookingforteam" href="{% url 'register_participant' %} ">register</a>
-    
+    <a id="lookingforteam" href="{% url 'register_participant' %} "><button class="register-btn">Register</button></a>
+
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -21,7 +21,6 @@
         {% for participant in participants %}
             {%  if not participant.in_team %}
                 <div class="card" data-url="{% url 'participant_profile' participant.id %}">
-                        <img src="" alt="profilepic">
                         <p>{{participant.name}}</p>
                 </div>
             {% endif %}
@@ -29,7 +28,6 @@
         {% for participant in participants %}
             {%  if participant.in_team %}
                 <div class="card occupied" data-url="{% url 'participant_profile' participant.id %}">
-                    <img src="" alt="profilepic">
                     <p>{{participant.name}}</p>
                     <p>{{participant.teamname}}</p>
                 </div>

@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: repeat(5, 300px);
     gap:65px;
+    margin-top: 25px;
 }
 
 .card
@@ -37,4 +38,16 @@
 .occupied
 {
     background-color: aqua;
+}
+
+.register-btn
+{
+    width: 235px;
+    height: 55px;
+    border-radius: 20px;
+    color: white;
+    background-color: #c35151;
+    border-color: #ff1f16f5;
+    font-size: larger;
+    font-family: cursive;
 }

@@ -10,7 +10,7 @@
             <li><a href="{% url 'teams' %}">Team</a></li>
             <li><a href="{% url 'find_members' %}">Find members</a></li>
             <li><a href="{% url 'invitations' %}?q=recived">Invitations</a></li>
-
+            <li><a href="{% url 'problem_statement' %}">Problem Statements</a></li>
             {% if request.user.is_authenticated %}
             <img src="{% static 'base/images/user.png' %}" alt="{{request.user}}" onclick="togglemenu()">
             {% else %}

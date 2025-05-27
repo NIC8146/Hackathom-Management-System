@@ -4,24 +4,94 @@
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'base/css/home.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600|Roboto:400,700&display=swap" rel="stylesheet">
 
 <div class="content-block">
-    <div id="about">
-        <div id="heading">What is Byte Brigade??</div>
-        <p>
-            Byte Brigade is more than just a competition; it's a learning experience.
-            You'll have the opportunity to network with fellow developers,
-            learn new skills through workshops and mentorship, and push your creative limits.
-            Our goal is to create a supportive environment where innovation thrives.
-            Come prepared to brainstorm, build, and have fun!
-            Let's see what incredible projects we can create together.
-        </p>
-    </div>
+    <section class="about-section">
+        <div class="about">
+            <h1>Welcome to <span class="highlight">Byte Brigade 2025</span></h1>
+            <p id="line">A 24-hour Hackathon of Innovation, Code, and Collaboration.</p>
+            <p id="discription">
+                Byte Brigade is more than just a competition; it's a learning experience.
+                You'll have the opportunity to network with fellow developers,
+                learn new skills through workshops and mentorship, and push your creative limits.
+                Our goal is to create a supportive environment where innovation thrives.
+                Come prepared to brainstorm, build, and have fun!
+                Let's see what incredible projects we can create together.
+            </p>
+            <a href="{% url 'register_participant' %}"><button class="register-btn">Register Now</button></a>
+        </div>
+    </section>
+
+    <section class="prize">
+        <h2>Prize Pool</h2>
+        <div class="prize-pool">
+            <div class="prize-card">
+                <h3>1st Place</h3>
+                <p>₹50,000 + Goodies</p>
+            </div>
+            <div class="prize-card">
+                <h3>2nd Place</h3>
+                <p>₹30,000 + Goodies</p>
+            </div>
+            <div class="prize-card">
+                <h3>3rd Place</h3>
+                <p>₹15,000 + Goodies</p>
+            </div>
+            <div class="prize-card">
+                <h3>Special Awards</h3>
+                <p>Best UI/UX, Best Innovation, and more!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h2>Timeline</h2>
+        <ul class="timeline-list">
+            <li><span>Registration Opens:</span> June 1, 2025</li>
+            <li><span>Registration Closes:</span> July 10, 2025</li>
+            <li><span>Hackathon Starts:</span> July 20, 2025, 10:00 AM</li>
+            <li><span>Hackathon Ends:</span> July 21, 2025, 10:00 AM</li>
+            <li><span>Result Announcement:</span> July 25, 2025</li>
+        </ul>
+    </section>
+
+    <section class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>Who can participate?</h4>
+                <p>Anyone with a passion for coding and innovation! Students and professionals are welcome.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is the team size?</h4>
+                <p>Teams can have 2-4 members.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is there a registration fee?</h4>
+                <p>No, participation is completely free!</p>
+            </div>
+        </div>
+    </section>
+
     <div id="organizers">
-        <div class="card"> <img src="{% static 'base/images/org1.jpg' %}" alt=""></div>
-        <div class="card">dfg</div>
-        <div class="card">dfg</div>
+        <p>Organizers</p>
+        <div id="organizers-cards">
+            <div class="card"> <img src="{% static 'base/images/org1.jpg' %}" alt=""></div>
+            <div class="card"> <img src="{% static 'base/images/org2.jpg' %}" alt=""></div>
+            <div class="card"> <img src="{% static 'base/images/org3.jpg' %}" alt=""></div>
+        </div>
     </div>
+
+    <section class="contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <p>Email: <a href="mailto:bytebrigade@hackathon.com">bytebrigade@hackathon.com</a></p>
+            <p>Phone: +91-9876543210</p>
+            <p>Join our <a href="#">Discord</a> for updates!</p>
+        </div>
+    </section>
+
 </div>
 
 {% endblock %}

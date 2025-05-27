@@ -16,31 +16,35 @@
         </ul>
         {% else %}
         <div id="details-header">
-            <img src="{% static 'base/images/user.png' %}" alt="">
+            <img src="{% static 'base/images/user.png' %}" alt="Profile Picture" class="profile-img">
             <div id="name">
-                <p>{{request.user}}</p>
-                <p>username : {{request.user.username}}</p>
+                <h2>{{request.user.get_full_name|default:request.user}}</h2>
+                <p class="username">@{{request.user.username}}</p>
             </div>
         </div>
         <hr>
         <div id="details">
             <div id="user-details">
-                <p>Date of Birth : {{request.user.dob}}</p>
-                <p>phone : {{request.user.phone}}</p>
-                <p>Email.: {{request.user.email}}</p>
-                <p>Branch : {{request.user.branch}}</p>
+                <h3>Personal Information</h3>
+                <p><strong>Date of Birth:</strong> {{request.user.dob}}</p>
+                <p><strong>Phone:</strong> {{request.user.phone}}</p>
+                <p><strong>Email:</strong> {{request.user.email}}</p>
+                <p><strong>Branch:</strong> {{request.user.branch}}</p>
             </div>
-            {% if request.user.in_team%}
+            {% if request.user.in_team %}
             <div id="team-details">
-                <p>Team Name : {{request.user.teamname}}</p>
-                <p>Team Leader : {{request.user.teamname.teamleader}}</p>
+                <h3>Team Details</h3>
+                <p><strong>Team Name:</strong> {{request.user.teamname}}</p>
+                <p><strong>Team Leader:</strong> {{request.user.teamname.teamleader}}</p>
             </div>
             {% endif %}
             <div id="skills-card">
-                <p>Skills</p>
+                <h3>Skills</h3>
                 <div id="skill-section">
                     {% for skill in skills %}
-                    <span id="skill">{{skill}}</span>
+                    <span class="skill-badge">{{skill}}</span>
+                    {% empty %}
+                    <span class="no-skills">No skills added yet.</span>
                     {% endfor %}
                 </div>
             </div>

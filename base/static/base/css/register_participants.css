@@ -15,3 +15,83 @@
  
 }
 
+#form-block {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #333;
+}
+
+#form-block h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+#form-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form-block p {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-block label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#form-block input[type="text"],
+#form-block input[type="email"],
+#form-block input[type="password"],
+#form-block textarea,
+#form-block select {
+    padding: 10px;
+    border: solid;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+#form-block button[type="submit"] {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#form-block button[type="submit"]:hover {
+    background-color: #135ca8;
+}
+
+#form-block a {
+    text-align: center;
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#form-block a:hover {
+    text-decoration: underline;
+}
