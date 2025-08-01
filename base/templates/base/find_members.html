@@ -21,15 +21,15 @@
         {% for participant in participants %}
             {%  if not participant.in_team %}
                 <div class="card" data-url="{% url 'participant_profile' participant.id %}">
-                        <p>{{participant.name}}</p>
+                        <strong>{{participant.name}}</strong>
                 </div>
             {% endif %}
         {% endfor %}
         {% for participant in participants %}
             {%  if participant.in_team %}
                 <div class="card occupied" data-url="{% url 'participant_profile' participant.id %}">
-                    <p>{{participant.name}}</p>
-                    <p>{{participant.teamname}}</p>
+                    <strong>{{participant.name}}</strong>
+                    <p>team : {{participant.teamname}}</p>
                 </div>
             {% endif %}
         {% endfor %}

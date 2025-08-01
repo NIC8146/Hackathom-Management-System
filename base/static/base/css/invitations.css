@@ -4,17 +4,20 @@ body {
 
 }
 
+.content-block{
+    height: 90vh;
+}
+
 #content-space {
     display: grid;
     grid-template-columns: 1fr 3fr;
     width: 98vw;
-    height: 100vh;
+    height: 100%;
     gap: 1vw;
 }
 
 .glass {
     /* glassmorphism */
-    background: rgba(243, 84, 84, 0.171);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -39,6 +42,7 @@ body {
     align-items: center;
     gap: 10px;
     padding-top: 20px;
+    overflow: auto;
 }
 
 .invitation-card {
@@ -89,7 +93,7 @@ body {
 #left a.active,
 #left a:focus,
 #left a:hover {
-    background: rgba(243, 84, 84, 0.15);
+    background: rgba(243, 84, 84, 0.5);
     color: #fff;
     box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
 }
@@ -138,7 +142,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.7);
+    background: rgb(255 224 224 / 70%);
     border-radius: 50%;
     width: 38px;
     height: 38px;

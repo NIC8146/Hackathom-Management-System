@@ -4,9 +4,13 @@
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'base/css/invitations.css' %}">
+<link rel="stylesheet" href="{% static 'base/css/home.css' %}">
 
-<div id="content-space">
-    <div class="glass" id="left">
+
+<div class="content-block">
+
+    <div id="content-space">
+        <div class="glass" id="left">
         <p>
             <a href="{% url 'invitations' %}?q=recived" class="{% if request.GET.q != 'sent' %}active{% endif %}">
                 invitation recived
@@ -45,5 +49,6 @@
         </div>
         {% endfor %}
     </div>
+</div>
 </div>
 {% endblock %}

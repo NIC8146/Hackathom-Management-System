@@ -6,11 +6,12 @@
 <link rel="stylesheet" href="{% static 'base/css/register_participants.css' %}">
 
 <div class="content-block">
-    <div id="form-block">register team
+    <div id="form-block">
+        <strong>register team</strong>
         <div ><form action="" method="POST">
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="Register as Participants">
+            <button type="submit">Register as Participants</button>
         </form></div>
     </div>
 </div>

@@ -9,7 +9,7 @@
 .card
 {
     width: 90%;
-    height: 170px;
+    height: 100%;
     
     background: rgb(255 174 174 / 20%);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -21,7 +21,29 @@
     padding: 42px;
     display: flex;
     justify-content: space-between;
+    gap: 75px;
 }
+
+.card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255 224 224 / 70%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(243, 84, 84, 0.10);
+}
+
+.card a img {
+        width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.15s;
+}
+
 .card-text
 {
     font-size: 1.5rem;
@@ -32,7 +54,9 @@
 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
+    width: 90vw;
 }
 
 .add_problem_statment

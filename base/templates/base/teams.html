@@ -21,8 +21,8 @@
         {% for team in teams %}
         <div class="card" data-url="{% url 'team_profile' team.id %}"">
             <!-- <img src="" alt="teamlogo"> -->
-            <p>{{team.name}}</p>
-            <p>{{team.teamleader}}</p>
+            <strong>{{team.name}}</strong>
+            <p>Team Leader: {{team.teamleader}}</p>
         </div>
         {% endfor %}
     </div>

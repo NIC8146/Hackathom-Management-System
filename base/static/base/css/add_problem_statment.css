@@ -2,6 +2,12 @@
     height: 90vh;
 }
 
+p{
+    display: flex;
+    flex-direction: column;
+}
+
+
 #add_problem_statment_card {
     background: rgba(255, 255, 255, 0.15);
     padding: 30px;

@@ -60,12 +60,12 @@
 #form-block input[type="password"],
 #form-block textarea,
 #form-block select {
-    padding: 10px;
-    border: solid;
+        padding: 10px;
+    border: 2px solid;
     border-radius: 8px;
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.9);
-    color: #d16262
+    color: #ff8686;
 }
 
 #form-block button[type="submit"] {
@@ -95,3 +95,11 @@
 #form-block a:hover {
     text-decoration: underline;
 }
+
+strong {
+    font-size: 24px;
+    color: #d62b2b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
