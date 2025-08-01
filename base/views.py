@@ -211,6 +211,14 @@ def profilepage(request, pk):
 
 def problem_statements(request):
     statments = problem_statement.objects.all()
-    print(statments)
-    context = {"statments": statments}
+    context = {"statments": statments, "admin": request.user.is_superuser}
     return render(request, "base/problem_statements.html", context)
+
+def add_problem_statment(request):
+    pass
+
+@login_required(login_url="/loginpage")
+def delete_problem_statment(request, pk):
+    invitation = problem_statement.objects.get(id=pk)
+    invitation.delete()
+    return redirect(problem_statements)

@@ -7,12 +7,20 @@
 
 
 <div class="content-block">
-    <h1>Problem Statements</h1>
+    {% if admin %}
+     <a href="{% url 'add_problem_statment' %} "><button class="add_problem_statment">Add Problem Statment</button></a>
+    {% endif %}
+     <h1>Problem Statements</h1>
     <ol class="cards">
         {% for statments in statments %}
 
         <div class="card">
             <li class="card-text">{{ statments }}</li>
+            {% if admin %}
+                <a href="{% url 'delete_problem_statment' statments.id %}">
+                    <img src="{% static 'base/images/delete.png' %}" alt="">
+                </a>
+            {% endif %}
         </div>
         {% endfor %}
     </ol>
