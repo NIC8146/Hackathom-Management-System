@@ -28,6 +28,9 @@ class UpdateParticipantForm(forms.ModelForm):
     class Meta:
         model = participant
         fields = ['name', 'branch', 'dob', 'skills', 'phone', 'email']  # exclude password here
+        widgets = {
+            'dob': forms.DateInput(attrs={'type': 'date'}),
+        }
 
 class CustomPasswordChangeForm(PasswordChangeForm):
     old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old Password'}))

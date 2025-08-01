@@ -57,6 +57,7 @@
 
 #form-block input[type="text"],
 #form-block input[type="email"],
+#form-block input[type="date"],
 #form-block input[type="password"],
 #form-block textarea,
 #form-block select {
