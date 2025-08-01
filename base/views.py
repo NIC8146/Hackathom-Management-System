@@ -49,7 +49,7 @@ def registerpage(request):
             login(request,user)
             return redirect("home")
         else:
-            messages.error(request,"error occured during registration")
+            messages.error(request,str(form.errors))
     context = {"form": register_participant_form()}
     return render(request, 'base/login_register.html', context)
 

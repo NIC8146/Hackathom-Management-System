@@ -1,3 +1,7 @@
+*{
+    list-style: none;
+}
+
 #login_register_card {
     background: rgba(255, 255, 255, 0.15);
     padding: 30px;
