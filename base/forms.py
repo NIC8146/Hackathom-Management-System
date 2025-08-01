@@ -20,6 +20,10 @@ class register_participant_form(forms.ModelForm):
         model = participant
         fields = ["name", "username", "phone", "skills", "email", "password"]
     
+    def __init__(self, *args, **kwargs):
+        super(register_participant_form, self).__init__(*args, **kwargs)
+        self.fields['password'].widget = forms.PasswordInput()
+    
 class UpdateParticipantForm(forms.ModelForm):
     class Meta:
         model = participant

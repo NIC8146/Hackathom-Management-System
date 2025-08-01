@@ -26,7 +26,7 @@ def loginpage(request):
                 login(request,user)
                 return redirect("/")
             else:
-                messages.error(request, "wrong username or password")
+                messages.error(request, "wrong email or password")
         except Exception as e:
             print(str(e))
             messages.error(request, "wrong username or password")
