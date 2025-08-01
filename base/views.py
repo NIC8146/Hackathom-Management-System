@@ -17,7 +17,7 @@ def home(request):
 def loginpage(request):
     page = "login"
     if request.method == "POST":
-        email = request.POST.get("Username")
+        email = request.POST.get("email")
         password = request.POST.get("Password")
 
         try:
