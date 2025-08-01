@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .models import team, participant, invitation, problem_statement
 from .forms  import teamform, invitationForm, register_participant_form
 from django.contrib.auth import update_session_auth_hash
-from .forms import UpdateParticipantForm, CustomPasswordChangeForm
+from .forms import UpdateParticipantForm, CustomPasswordChangeForm, ProblemStatmentForm
 
 # Create your views here
 def home(request):
@@ -215,7 +215,13 @@ def problem_statements(request):
     return render(request, "base/problem_statements.html", context)
 
 def add_problem_statment(request):
-    pass
+    if request.method == "POST":
+        form = ProblemStatmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(problem_statements)
+    context = {"form" : ProblemStatmentForm()}
+    return render(request, "base/add_problem_statment.html", context)
 
 @login_required(login_url="/loginpage")
 def delete_problem_statment(request, pk):

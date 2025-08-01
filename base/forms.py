@@ -1,6 +1,6 @@
 from django import forms
 # from django.forms import form.ModelForm
-from .models import team, invitation, participant
+from .models import team, invitation, participant, problem_statement
 from django.contrib.auth.forms import PasswordChangeForm
 
 class teamform(forms.ModelForm):
@@ -33,3 +33,9 @@ class CustomPasswordChangeForm(PasswordChangeForm):
     old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old Password'}))
     new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'New Password'}))
     new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm New Password'}))
+
+
+class ProblemStatmentForm(forms.ModelForm):
+    class Meta:
+        model = problem_statement
+        fields = "__all__"

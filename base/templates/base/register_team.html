@@ -5,13 +5,14 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'base/css/register_participants.css' %}">
 
-
-<div id="form-block">register team
-    <div ><form action="" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Register as Participants">
-    </form></div>
+<div class="content-block">
+    <div id="form-block">register team
+        <div ><form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Register as Participants">
+        </form></div>
+    </div>
 </div>
 
 

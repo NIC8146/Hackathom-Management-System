@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/add_problem_statment.css' %}">
+
+<div class="content-block">
+    <div id="add_problem_statment_card">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="add problem statment">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+.content-block{
+    height: 90vh;
+}
+
+#add_problem_statment_card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    margin: auto;
+    width: 90%;
+    max-width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#add_problem_statment_card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#add_problem_statment_card label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+#add_problem_statment_card input[type="text"],
+#add_problem_statment_card input[type="submit"],
+#add_problem_statment_card textarea {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #333;
+    font-size: 14px;
+    border: 1px solid black;
+}
+
+#add_problem_statment_card input[type="submit"] {
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#add_problem_statment_card input[type="submit"]:hover {
+    background-color: #135ca8;
+}
+
+#add_problem_statment_card a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#add_problem_statment_card textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 300px;
+min-width: 70%;
+    max-width: 70%;
+}
