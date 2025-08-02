@@ -23,10 +23,10 @@ RUN pip install --upgrade pip
 RUN pip install django
 RUN python manage.py makemigrations base
 RUN python manage.py migrate
-
+RUN mkdir -p /var/www/static
 RUN python manage.py collectstatic --noinput
 EXPOSE 8000
-CMD ["python", "manage.py", "runserver"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Use the following command to build and run the Docker container
 # docker build -t hackathon-portal .
